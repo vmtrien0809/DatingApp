@@ -2,21 +2,22 @@
 
 namespace DatingApp.API.Migrations
 {
-    public partial class adduedUserEntity : Migration
+    public partial class editUser : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "Username",
+            migrationBuilder.RenameColumn(
+                name: "LooKingFor",
                 table: "Users",
-                nullable: true);
+                newName: "LookingFor");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Username",
-                table: "Users");
+            migrationBuilder.RenameColumn(
+                name: "LookingFor",
+                table: "Users",
+                newName: "LooKingFor");
         }
     }
 }
